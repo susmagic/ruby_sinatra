@@ -1,2 +1,2 @@
-# ruby_sinatra
+# Ruby sinatra
 Repository for sinatra
