@@ -32,12 +32,13 @@ post '/visit' do
   @phone = params[:phone]
   @datetime = params[:datetime]
   @barber = params[:barber]
+  @color = params[:color]
 
   if @username != ""
     @message = "Спасибо #{@username}, мы будем ждать Вас #{@datetime}."
 
     f = File.open("./public/users.txt","a")
-    f.write "User: #{@username}, Phone #{@phone}, Date and time: #{@datetime}, barber: #{@barber}\n"
+    f.write "User: #{@username}, Phone #{@phone}, Date and time: #{@datetime}, barber: #{@barber} and color: #{@color}\n"
 
     erb :visit
   else
@@ -63,24 +64,3 @@ post '/admin' do
     end
 
 end
-=begin
-Добавить post обработчик для visti
-Добавить все введеные даныне в ./public/users.txt
-Добавить страницу /contacts со следующими полями:
-email
-сообщения(посмотреть html-элемент text area)
-=====================
-На странице /vist пользователь должен иметь возможность выбрать парикмахера из списка: 
-
-Walter White
-Jessie Pinkman
-Gus Fring
-
-Необходимо использовать html-контрол (тег), который называется select
-
-Программа должна сохранять введеные данные в тот же файл.
-=====================
-Вход по логину и по паролю с помощью sinatra bootsterap урок 21, кто не сделал.
-
-
-=end
