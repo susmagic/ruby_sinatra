@@ -45,25 +45,16 @@ post '/visit' do
     if params[k] == ''
       @error = hh[k]
       return erb :visit
+    else
+      @message = "Спасибо #{@username}, мы будем ждать Вас #{@datetime}."
+
+      f = File.open("./public/users.txt","a")
+      f.write "User: #{@username}, Phone #{@phone}, Date and time: #{@datetime}, barber: #{@barber} and color: #{@color}\n"
+      return erb :visit
     end
   end
 
 end
-
-=begin
-  if @username != ''
-    @message = "Спасибо #{@username}, мы будем ждать Вас #{@datetime}."
-
-    f = File.open("./public/users.txt","a")
-    f.write "User: #{@username}, Phone #{@phone}, Date and time: #{@datetime}, barber: #{@barber} and color: #{@color}\n"
-
-    erb :visit
-  else
-    @message = "Не все данные введены."
-    erb :visit
-  end
-end
-=end
 
 post '/admin' do
     @login = params[:login]
