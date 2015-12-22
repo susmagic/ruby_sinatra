@@ -2,3 +2,4 @@ User: roma, Phone 23, Date and time: 32, barber: Gus Fring
 User: asd, Phone asd, Date and time: 3, barber: Gus Fring
 User: sad, Phone 123, Date and time: 23, barber: Walter White
 User: ads, Phone 2, Date and time: 23, barber: Walter White
+User: se, Phone 12, Date and time: 12, barber: Jessie Pinkman and color: 

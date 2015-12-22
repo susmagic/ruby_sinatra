@@ -62,5 +62,6 @@ post '/admin' do
         @message = "Доступ запрещён"
         erb :login
     end
-
 end
+
+#повторить добавить новые джава фичи
