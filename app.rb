@@ -40,19 +40,13 @@ post '/visit' do
          phone: 'Введите телефон',
          datetime: 'Введите дату и время' }
   #для каждой пары ключ-значение
-  hh.each do |k, v|
-    #если параметр пуст
-    if params[k] == ''
-      @error = hh[k]
-      return erb :visit
-    else
-      @message = "Спасибо #{@username}, мы будем ждать Вас #{@datetime}."
+  @error = hh.select {|key,_| params[key] == ""}.values.join(", ")
 
-      f = File.open("./public/users.txt","a")
-      f.write "User: #{@username}, Phone #{@phone}, Date and time: #{@datetime}, barber: #{@barber} and color: #{@color}\n"
-      return erb :visit
-    end
+  if @error != ''
+    return erb :visit
   end
+
+  erb "ok, username is #{@username}"
 
 end
 
