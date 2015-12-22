@@ -8,6 +8,7 @@ get '/' do
 end
 
 get '/about' do
+    @error = "something error"
     erb :about
 end
 
@@ -34,7 +35,23 @@ post '/visit' do
   @barber = params[:barber]
   @color = params[:color]
 
-  if @username != ""
+  #hash
+  hh = { username: 'Введите имя',
+         phone: 'Введите телефон',
+         datetime: 'Введите дату и время' }
+  #для каждой пары ключ-значение
+  hh.each do |k, v|
+    #если параметр пуст
+    if params[k] == ''
+      @error = hh[k]
+      return erb :visit
+    end
+  end
+
+end
+
+=begin
+  if @username != ''
     @message = "Спасибо #{@username}, мы будем ждать Вас #{@datetime}."
 
     f = File.open("./public/users.txt","a")
@@ -46,6 +63,7 @@ post '/visit' do
     erb :visit
   end
 end
+=end
 
 post '/admin' do
     @login = params[:login]
@@ -63,5 +81,3 @@ post '/admin' do
         erb :login
     end
 end
-
-#повторить добавить новые джава фичи
