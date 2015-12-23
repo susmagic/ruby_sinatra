@@ -12,3 +12,7 @@ User: dfs, Phone 12, Date and time: 3, barber: Walter White and color: #7bd148
 User: dfs, Phone 12, Date and time: 3, barber: Walter White and color: #7bd148
 User: dfs, Phone 12, Date and time: 3, barber: Walter White and color: #7bd148
 User: dfs, Phone 12, Date and time: 3, barber: Walter White and color: #7bd148
+User: asd, Phone 123, Date and time: 123, barber: Walter White and color: #7bd148
+User: asd, Phone 123, Date and time: 123, barber: Walter White and color: #7bd148
+User: asd, Phone 123, Date and time: 123, barber: Walter White and color: #7bd148
+User: rr, Phone 3, Date and time: 3, barber: Gus Fring and color: #7bd148

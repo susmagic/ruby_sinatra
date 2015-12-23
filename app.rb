@@ -1,6 +1,7 @@
 #encoding: utf-8
 require 'rubygems'
 require 'sinatra'
+require 'pony'
 require 'sinatra/reloader'
 
 get '/' do
@@ -8,7 +9,6 @@ get '/' do
 end
 
 get '/about' do
-    @error = "something error"
     erb :about
 end
 
@@ -51,18 +51,25 @@ post '/visit' do
 end
 
 post '/admin' do
-    @login = params[:login]
-    @password = params[:password]
+  @login = params[:login]
+  @password = params[:password]
 
-    if @login == "admin" && @password == "secret"
-        @logfile = File.open("./public/users.txt","r")
-        erb :admin
+  if @login == "admin" && @password == "secret"
+      @logfile = File.open("./public/users.txt","r")
+      erb :admin
 
-    elsif @login =='admin' && @password == 'admin'
-        @message = "Не плохая попытка хахаха"
-        erb :login
-    else
-        @message = "Доступ запрещён"
-        erb :login
-    end
+  elsif @login =='admin' && @password == 'admin'
+      @message = "Не плохая попытка хахаха"
+      erb :login
+  else
+      @message = "Доступ запрещён"
+      erb :login
+  end
+end
+
+post '/contacts' do
+  @sender = params[:sender]
+  @comment = params[:comment]
+
+  erb "<div class=\"alert alert-success\"><%=\"Спасибо #{@sender} мы свяжемся с Вами!\"%></div>"
 end

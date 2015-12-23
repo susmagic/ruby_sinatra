@@ -1,13 +1,13 @@
 <h2>Напишите нам</h2>
 
-<form action="/admin" method="POST">
+<form action="/contacts" method="POST">
 
   <div class="form-group">
     <label>Ваш email</label>
-    <input name="email" type="text" class="form-control" placeholder="Введите Ваше email">
+    <input name="sender" type="text" class="form-control" placeholder="Введите Ваш email">
   </div>
   
-  <textarea class="form-control" rows="2" placeholder="Введите Ваши пожелания"></textarea>
+  <textarea name="comment" class="form-control" rows="2" placeholder="Введите Ваши пожелания"></textarea>
 
     <p><%= @message %></p>
   <button type="submit" class="btn btn-primary">Отправить</button>
