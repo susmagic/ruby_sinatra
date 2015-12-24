@@ -6,8 +6,8 @@ require 'sinatra/reloader'
 require 'sqlite3'
 
 configure do
-    db = get_db
-    db.execute 'CREATE TABLE IF NOT EXISTS
+  db = get_db
+  db.execute 'CREATE TABLE IF NOT EXISTS
       "Users"
       (
         "Id" INTEGER PRIMARY KEY  AUTOINCREMENT, 
@@ -62,7 +62,7 @@ post '/visit' do
   end
 
   db = get_db
-  db.execute 'insert into 
+  db.execute 'insert into
     Users
     (
       Name,
@@ -76,10 +76,6 @@ post '/visit' do
 
   erb "OK, username is #{@username}, #{@phone}, #{@datetime}, #{@barber}, #{@color}"
 
-end
-
-def get_db
-  return SQLite3::Database.new 'barbershop.db'
 end
 
 post '/admin' do
@@ -104,4 +100,8 @@ post '/contacts' do
   @comment = params[:comment]
 
   erb "<div class=\"alert alert-success\"><%=\"Спасибо #{@sender} мы свяжемся с Вами!\"%></div>"
+end
+
+def get_db
+  return SQLite3::Database.new 'barbershop.db'
 end
