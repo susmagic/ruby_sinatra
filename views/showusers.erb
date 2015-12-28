@@ -1,9 +1,19 @@
-<table class="table">
-    <%@results.each do |row|%>
+<table class="table table-striped">
+    <thead>
         <tr>
-            <td><%=row['Name']%></td>
-            <td><%=row['DateStamp']%></td>
-            <td><%=row['Barber']%></td>
+            <th>Name</th>
+            <th>DateStamp</th>
+            <th>Barber</th>
         </tr>
-    <%end%>
+    </thead>
+
+    <body>
+        <%@results.each do |row|%>
+            <tr>
+                <td><%=row['Name']%></td>
+                <td><%=row['DateStamp']%></td>
+                <td><%=row['Barber']%></td>
+            </tr>
+        <%end%>
+    </body>
 </table>
