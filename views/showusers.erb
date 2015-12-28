@@ -1,3 +1,9 @@
-
-            <div><%=@name%></div>
-            <div><%=@datestamp%></div>
+<table class="table">
+    <%@results.each do |row|%>
+        <tr>
+            <td><%=row['Name']%></td>
+            <td><%=row['DateStamp']%></td>
+            <td><%=row['Barber']%></td>
+        </tr>
+    <%end%>
+</table>
