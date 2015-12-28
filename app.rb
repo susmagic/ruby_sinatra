@@ -5,8 +5,15 @@ require 'pony'
 require 'sinatra/reloader'
 require 'sqlite3'
 
+def get_db
+  db = SQLite3::Database.new 'barbershop.db'
+  db.results_as_hash = true
+  return db
+end
+
 configure do
   db = get_db
+  db.results_as_hash = true #выводим данные в виде хеша
   db.execute 'CREATE TABLE IF NOT EXISTS
       "Users"
       (
@@ -42,6 +49,11 @@ end
 get '/admin' do
     erb :admin
 end
+
+get '/showusers' do
+
+end
+
 
 post '/visit' do
   @username = params[:username]
@@ -100,8 +112,4 @@ post '/contacts' do
   @comment = params[:comment]
 
   erb "<div class=\"alert alert-success\"><%=\"Спасибо #{@sender} мы свяжемся с Вами!\"%></div>"
-end
-
-def get_db
-  return SQLite3::Database.new 'barbershop.db'
 end

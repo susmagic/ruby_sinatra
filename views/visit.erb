@@ -1,25 +1,25 @@
-<h2>Записаться</h2>
-
 <script type="text/javascript">
-$(function() {
-  // тут я могу написать любой javascript код, который исполнится
-  // после загрузки страницы
-  $('#color').simplecolorpicker();
-  $('#datetimepicker').datetimepicker();
+  $(function() {
+    // тут я могу написать любой javascript код, который исполнится
+    // после загрузки страницы
+    $('#color').simplecolorpicker();
+    $('#datetimepicker').datetimepicker();
 
 });
 </script>
+
+<h2>Записаться</h2>
 
 <form action="/visit" method="POST">
 
   <div class="form-group">
     <label>Ваше имя</label>
-    <input name="username" type="text" class="form-control" placeholder="Введите Ваше имя" value="<%=@username%>">
+    <input name="username" type="text" class="form-control" placeholder="Введите имя" value="<%=@username%>">
   </div>
 
   <div class="form-group">
     <label>Ваш телефон</label>
-    <input name="phone" type="text" class="form-control" placeholder="Введите Ваш телефон" value="<%=@phone%>">
+    <input name="phone" type="text" class="form-control" placeholder="Введите телефон" value="<%=@phone%>">
   </div>
 
   <div class="form-group">
