@@ -22,6 +22,11 @@ def get_db
   return db
 end
 
+before do
+  db = get_db
+  @barbers = db.execute 'select * from Barbers'
+end
+
 configure do
   db = get_db
   db.results_as_hash = true #выводим данные в виде хеша
