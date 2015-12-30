@@ -4,6 +4,7 @@
             <th>Name</th>
             <th>DateStamp</th>
             <th>Barber</th>
+            <th>Color</th>
         </tr>
     </thead>
 
@@ -13,6 +14,7 @@
                 <td><%=row['Name']%></td>
                 <td><%=row['DateStamp']%></td>
                 <td><%=row['Barber']%></td>
+                <td style="background-color: <%= row['Color']%>"><%=row['Color']%></td>
             </tr>
         <%end%>
     </tbody>
